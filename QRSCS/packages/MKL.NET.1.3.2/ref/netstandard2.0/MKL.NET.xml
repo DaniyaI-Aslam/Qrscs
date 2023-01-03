@@ -1,0 +1,437 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MKL.NET</name>
+    </assembly>
+    <members>
+        <member name="M:MKLNET.Solve.NonLinearLeastSquares(System.Action{System.Double[],System.Double[]},System.Double[],System.Double[],System.Double[],System.Int32,System.Int32,System.Double,System.Double)">
+            <summary>
+            Nonlinear Least Squares Solver. Fx = F(x). minimizes Norm_2(F(x))
+            </summary>
+            <param name="F">objective function, not called in parallel</param>
+            <param name="x">input values, initial guess to start, solution on exit</param>
+            <param name="Fx">function values, just zero to start, solution on exit</param>
+            <param name="eps">precisions for stop-criteria, defaults to all 1e-9</param>
+            <param name="iter1">maximum number of iterations, defaults of 1000</param>
+            <param name="iter2">maximum number of iterations of calculation of trial-step, default of 100</param>
+            <param name="rs">initial step bound (0.1 - 100.0 recommended), default of 0.0 which MKL defaults as 100.0</param>
+            <param name="jeps">precision of the Jacobian matrix calculation</param>
+            <returns>stop criterion</returns>
+        </member>
+        <member name="M:MKLNET.Solve.NonLinearLeastSquares(System.Action{System.Double[],System.Double[]},System.Action{System.Double[],System.Double[]},System.Double[],System.Double[],System.Double[],System.Int32,System.Int32,System.Double)">
+            <summary>
+            Nonlinear Least Squares Solver. Fx = F(x). minimizes Norm_2(F(x))
+            </summary>
+            <param name="F">objective function, not called in parallel</param>
+            <param name="J">Jacobian function, J_ij = df_i / dx_j as a column major array</param>
+            <param name="x">input values, initial guess to start, solution on exit</param>
+            <param name="Fx">function values, just zero to start, solution on exit</param>
+            <param name="eps">precisions for stop-criteria, defaults to all 1e-9</param>
+            <param name="iter1">maximum number of iterations, defaults of 1000</param>
+            <param name="iter2">maximum number of iterations of calculation of trial-step, default of 100</param>
+            <param name="rs">initial step bound (0.1 - 100.0 recommended), default of 0.0 which MKL defaults as 100.0</param>
+            <returns>stop criterion</returns>
+        </member>
+        <member name="M:MKLNET.Solve.NonLinearLeastSquares(System.Action{System.Double[],System.Double[]},System.Double[],System.Double[])">
+            <summary>
+            Nonlinear Least Squares Solver. Fx = F(x). minimizes Norm_2(F(x))
+            </summary>
+            <param name="F">objective function, not called in parallel</param>
+            <param name="x">input values, initial guess to start, solution on exit</param>
+            <param name="Fx">function values, just zero to start, solution on exit</param>
+            <returns>stop criterion</returns>
+        </member>
+        <member name="M:MKLNET.Solve.NonLinearLeastSquares(System.Action{System.Double[],System.Double[]},System.Action{System.Double[],System.Double[]},System.Double[],System.Double[])">
+            <summary>
+            Nonlinear Least Squares Solver. Fx = F(x). minimizes Norm_2(F(x))
+            </summary>
+            <param name="F">objective function, not called in parallel</param>
+            <param name="J">Jacobian function, J_ij = df_i / dx_j as a column major array</param>
+            <param name="x">input values, initial guess to start, solution on exit</param>
+            <param name="Fx">function values, just zero to start, solution on exit</param>
+            <returns>stop criterion</returns>
+        </member>
+        <member name="M:MKLNET.Solve.NonLinearLeastSquares(MKLNET.SolveFn,System.Double[],System.Double[],System.Double[],System.Int32,System.Int32,System.Double,System.Double)">
+            <summary>
+            Nonlinear Least Squares Solver. Fx = F(x). minimizes Norm_2(F(x))
+            </summary>
+            <param name="F">objective function, called in parallel</param>
+            <param name="x">input values, initial guess to start, solution on exit</param>
+            <param name="Fx">function values, just zero to start, solution on exit</param>
+            <param name="eps">precisions for stop-criteria, defaults to all 1e-9</param>
+            <param name="iter1">maximum number of iterations, defaults of 1000</param>
+            <param name="iter2">maximum number of iterations of calculation of trial-step, default of 100</param>
+            <param name="rs">initial step bound (0.1 - 100.0 recommended), default of 0.0 which MKL defaults as 100.0</param>
+            <param name="jeps">precision of the Jacobian matrix calculation</param>
+            <returns>stop criterion</returns>
+        </member>
+        <member name="M:MKLNET.Solve.NonLinearLeastSquares(MKLNET.SolveFn,System.Action{System.Double[],System.Double[]},System.Double[],System.Double[],System.Double[],System.Int32,System.Int32,System.Double)">
+            <summary>
+            Nonlinear Least Squares Solver. Fx = F(x). minimizes Norm_2(F(x))
+            </summary>
+            <param name="F">objective function, called in parallel</param>
+            <param name="J">Jacobian function, J_ij = df_i / dx_j as a column major array</param>
+            <param name="x">input values, initial guess to start, solution on exit</param>
+            <param name="Fx">function values, just zero to start, solution on exit</param>
+            <param name="eps">precisions for stop-criteria, defaults to all 1e-9</param>
+            <param name="iter1">maximum number of iterations, defaults of 1000</param>
+            <param name="iter2">maximum number of iterations of calculation of trial-step, default of 100</param>
+            <param name="rs">initial step bound (0.1 - 100.0 recommended), default of 0.0 which MKL defaults as 100.0</param>
+            <returns>stop criterion</returns>
+        </member>
+        <member name="M:MKLNET.Solve.NonLinearLeastSquares(MKLNET.SolveFn,System.Double[],System.Double[])">
+            <summary>
+            Nonlinear Least Squares Solver. Fx = F(x). minimizes Norm_2(F(x))
+            </summary>
+            <param name="F">objective function, called in parallel</param>
+            <param name="x">input values, initial guess to start, solution on exit</param>
+            <param name="Fx">function values, just zero to start, solution on exit</param>
+            <returns>stop criterion</returns>
+        </member>
+        <member name="M:MKLNET.Solve.NonLinearLeastSquares(MKLNET.SolveFn,System.Action{System.Double[],System.Double[]},System.Double[],System.Double[])">
+            <summary>
+            Nonlinear Least Squares Solver. Fx = F(x). minimizes Norm_2(F(x))
+            </summary>
+            <param name="F">objective function, called in parallel</param>
+            <param name="J">Jacobian function, J_ij = df_i / dx_j as a column major array</param>
+            <param name="x">input values, initial guess to start, solution on exit</param>
+            <param name="Fx">function values, just zero to start, solution on exit</param>
+            <returns>stop criterion</returns>
+        </member>
+        <member name="M:MKLNET.Solve.NonLinearLeastSquares(System.Action{System.Double[],System.Double[]},System.Double[],System.Double[],System.Double[],System.Double[],System.Double[],System.Int32,System.Int32,System.Double,System.Double)">
+            <summary>
+            Nonlinear Least Squares Solver. Fx = F(x). minimizes Norm_2(F(x))
+            </summary>
+            <param name="F">objective function, not called in parallel</param>
+            <param name="x">input values, initial guess to start, solution on exit</param>
+            <param name="lower">x lower bound</param>
+            <param name="upper">x upper bound</param>
+            <param name="Fx">function values, just zero to start, solution on exit</param>
+            <param name="eps">precisions for stop-criteria, defaults to all 1e-9</param>
+            <param name="iter1">maximum number of iterations, defaults of 1000</param>
+            <param name="iter2">maximum number of iterations of calculation of trial-step, default of 100</param>
+            <param name="rs">initial step bound (0.1 - 100.0 recommended), default of 0.0 which MKL defaults as 100.0</param>
+            <param name="jeps">precision of the Jacobian matrix calculation</param>
+            <returns>stop criterion</returns>
+        </member>
+        <member name="M:MKLNET.Solve.NonLinearLeastSquares(System.Action{System.Double[],System.Double[]},System.Action{System.Double[],System.Double[]},System.Double[],System.Double[],System.Double[],System.Double[],System.Double[],System.Int32,System.Int32,System.Double)">
+            <summary>
+            Nonlinear Least Squares Solver. Fx = F(x). minimizes Norm_2(F(x))
+            </summary>
+            <param name="F">objective function, not called in parallel</param>
+            <param name="J">Jacobian function, J_ij = df_i / dx_j as a column major array</param>
+            <param name="x">input values, initial guess to start, solution on exit</param>
+            <param name="lower">x lower bound</param>
+            <param name="upper">x upper bound</param>
+            <param name="Fx">function values, just zero to start, solution on exit</param>
+            <param name="eps">precisions for stop-criteria, defaults to all 1e-9</param>
+            <param name="iter1">maximum number of iterations, defaults of 1000</param>
+            <param name="iter2">maximum number of iterations of calculation of trial-step, default of 100</param>
+            <param name="rs">initial step bound (0.1 - 100.0 recommended), default of 0.0 which MKL defaults as 100.0</param>
+            <returns>stop criterion</returns>
+        </member>
+        <member name="M:MKLNET.Solve.NonLinearLeastSquares(System.Action{System.Double[],System.Double[]},System.Double[],System.Double[],System.Double[],System.Double[])">
+            <summary>
+            Nonlinear Least Squares Solver. Fx = F(x). minimizes Norm_2(F(x))
+            </summary>
+            <param name="F">objective function, not called in parallel</param>
+            <param name="x">input values, initial guess to start, solution on exit</param>
+            <param name="lower">x lower bound</param>
+            <param name="upper">x upper bound</param>
+            <param name="Fx">function values, just zero to start, solution on exit</param>
+            <returns>stop criterion</returns>
+        </member>
+        <member name="M:MKLNET.Solve.NonLinearLeastSquares(System.Action{System.Double[],System.Double[]},System.Action{System.Double[],System.Double[]},System.Double[],System.Double[],System.Double[],System.Double[])">
+            <summary>
+            Nonlinear Least Squares Solver. Fx = F(x). minimizes Norm_2(F(x))
+            </summary>
+            <param name="F">objective function, not called in parallel</param>
+            <param name="J">Jacobian function, J_ij = df_i / dx_j as a column major array</param>
+            <param name="x">input values, initial guess to start, solution on exit</param>
+            <param name="lower">x lower bound</param>
+            <param name="upper">x upper bound</param>
+            <param name="Fx">function values, just zero to start, solution on exit</param>
+            <returns>stop criterion</returns>
+        </member>
+        <member name="M:MKLNET.Solve.NonLinearLeastSquares(MKLNET.SolveFn,System.Double[],System.Double[],System.Double[],System.Double[],System.Double[],System.Int32,System.Int32,System.Double,System.Double)">
+            <summary>
+            Nonlinear Least Squares Solver. Fx = F(x). minimizes Norm_2(F(x))
+            </summary>
+            <param name="F">objective function, called in parallel</param>
+            <param name="x">input values, initial guess to start, solution on exit</param>
+            <param name="lower">x lower bound</param>
+            <param name="upper">x upper bound</param>
+            <param name="Fx">function values, just zero to start, solution on exit</param>
+            <param name="eps">precisions for stop-criteria, defaults to all 1e-9</param>
+            <param name="iter1">maximum number of iterations, defaults of 1000</param>
+            <param name="iter2">maximum number of iterations of calculation of trial-step, default of 100</param>
+            <param name="rs">initial step bound (0.1 - 100.0 recommended), default of 0.0 which MKL defaults as 100.0</param>
+            <param name="jeps">precision of the Jacobian matrix calculation</param>
+            <returns>stop criterion</returns>
+        </member>
+        <member name="M:MKLNET.Solve.NonLinearLeastSquares(MKLNET.SolveFn,System.Action{System.Double[],System.Double[]},System.Double[],System.Double[],System.Double[],System.Double[],System.Double[],System.Int32,System.Int32,System.Double)">
+            <summary>
+            Nonlinear Least Squares Solver. Fx = F(x). minimizes Norm_2(F(x))
+            </summary>
+            <param name="F">objective function, called in parallel</param>
+            <param name="J">Jacobian function, J_ij = df_i / dx_j as a column major array</param>
+            <param name="x">input values, initial guess to start, solution on exit</param>
+            <param name="lower">x lower bound</param>
+            <param name="upper">x upper bound</param>
+            <param name="Fx">function values, just zero to start, solution on exit</param>
+            <param name="eps">precisions for stop-criteria, defaults to all 1e-9</param>
+            <param name="iter1">maximum number of iterations, defaults of 1000</param>
+            <param name="iter2">maximum number of iterations of calculation of trial-step, default of 100</param>
+            <param name="rs">initial step bound (0.1 - 100.0 recommended), default of 0.0 which MKL defaults as 100.0</param>
+            <returns>stop criterion</returns>
+        </member>
+        <member name="M:MKLNET.Solve.NonLinearLeastSquares(MKLNET.SolveFn,System.Double[],System.Double[],System.Double[],System.Double[])">
+            <summary>
+            Nonlinear Least Squares Solver. Fx = F(x). minimizes Norm_2(F(x))
+            </summary>
+            <param name="F">objective function, called in parallel</param>
+            <param name="x">input values, initial guess to start, solution on exit</param>
+            <param name="lower">x lower bound</param>
+            <param name="upper">x upper bound</param>
+            <param name="Fx">function values, just zero to start, solution on exit</param>
+            <returns>stop criterion</returns>
+        </member>
+        <member name="M:MKLNET.Solve.NonLinearLeastSquares(MKLNET.SolveFn,System.Action{System.Double[],System.Double[]},System.Double[],System.Double[],System.Double[],System.Double[])">
+            <summary>
+            Nonlinear Least Squares Solver. Fx = F(x). minimizes Norm_2(F(x))
+            </summary>
+            <param name="F">objective function, called in parallel</param>
+            <param name="J">Jacobian function, J_ij = df_i / dx_j as a column major array</param>
+            <param name="x">input values, initial guess to start, solution on exit</param>
+            <param name="lower">x lower bound</param>
+            <param name="upper">x upper bound</param>
+            <param name="Fx">function values, just zero to start, solution on exit</param>
+            <returns>stop criterion</returns>
+        </member>
+        <member name="M:MKLNET.Solve.NonLinearLeastSquares(System.Action{System.Single[],System.Single[]},System.Single[],System.Single[],System.Single[],System.Int32,System.Int32,System.Single,System.Single)">
+            <summary>
+            Nonlinear Least Squares Solver. Fx = F(x). minimizes Norm_2(F(x))
+            </summary>
+            <param name="F">objective function, not called in parallel</param>
+            <param name="x">input values, initial guess to start, solution on exit</param>
+            <param name="Fx">function values, just zero to start, solution on exit</param>
+            <param name="eps">precisions for stop-criteria, defaults to all 1e-9</param>
+            <param name="iter1">maximum number of iterations, defaults of 1000</param>
+            <param name="iter2">maximum number of iterations of calculation of trial-step, default of 100</param>
+            <param name="rs">initial step bound (0.1 - 100.0 recommended), default of 0.0 which MKL defaults as 100.0</param>
+            <param name="jeps">precision of the Jacobian matrix calculation</param>
+            <returns>stop criterion</returns>
+        </member>
+        <member name="M:MKLNET.Solve.NonLinearLeastSquares(System.Action{System.Single[],System.Single[]},System.Action{System.Single[],System.Single[]},System.Single[],System.Single[],System.Single[],System.Int32,System.Int32,System.Single)">
+            <summary>
+            Nonlinear Least Squares Solver. Fx = F(x). minimizes Norm_2(F(x))
+            </summary>
+            <param name="F">objective function, not called in parallel</param>
+            <param name="J">Jacobian function, J_ij = df_i / dx_j as a column major array</param>
+            <param name="x">input values, initial guess to start, solution on exit</param>
+            <param name="Fx">function values, just zero to start, solution on exit</param>
+            <param name="eps">precisions for stop-criteria, defaults to all 1e-9</param>
+            <param name="iter1">maximum number of iterations, defaults of 1000</param>
+            <param name="iter2">maximum number of iterations of calculation of trial-step, default of 100</param>
+            <param name="rs">initial step bound (0.1 - 100.0 recommended), default of 0.0 which MKL defaults as 100.0</param>
+            <returns>stop criterion</returns>
+        </member>
+        <member name="M:MKLNET.Solve.NonLinearLeastSquares(System.Action{System.Single[],System.Single[]},System.Single[],System.Single[])">
+            <summary>
+            Nonlinear Least Squares Solver. Fx = F(x). minimizes Norm_2(F(x))
+            </summary>
+            <param name="F">objective function, not called in parallel</param>
+            <param name="x">input values, initial guess to start, solution on exit</param>
+            <param name="Fx">function values, just zero to start, solution on exit</param>
+            <returns>stop criterion</returns>
+        </member>
+        <member name="M:MKLNET.Solve.NonLinearLeastSquares(System.Action{System.Single[],System.Single[]},System.Action{System.Single[],System.Single[]},System.Single[],System.Single[])">
+            <summary>
+            Nonlinear Least Squares Solver. Fx = F(x). minimizes Norm_2(F(x))
+            </summary>
+            <param name="F">objective function, not called in parallel</param>
+            <param name="J">Jacobian function, J_ij = df_i / dx_j as a column major array</param>
+            <param name="x">input values, initial guess to start, solution on exit</param>
+            <param name="Fx">function values, just zero to start, solution on exit</param>
+            <returns>stop criterion</returns>
+        </member>
+        <member name="M:MKLNET.Solve.NonLinearLeastSquares(MKLNET.SolveFnF,System.Single[],System.Single[],System.Single[],System.Int32,System.Int32,System.Single,System.Single)">
+            <summary>
+            Nonlinear Least Squares Solver. Fx = F(x). minimizes Norm_2(F(x))
+            </summary>
+            <param name="F">objective function, called in parallel</param>
+            <param name="x">input values, initial guess to start, solution on exit</param>
+            <param name="Fx">function values, just zero to start, solution on exit</param>
+            <param name="eps">precisions for stop-criteria, defaults to all 1e-9</param>
+            <param name="iter1">maximum number of iterations, defaults of 1000</param>
+            <param name="iter2">maximum number of iterations of calculation of trial-step, default of 100</param>
+            <param name="rs">initial step bound (0.1 - 100.0 recommended), default of 0.0 which MKL defaults as 100.0</param>
+            <param name="jeps">precision of the Jacobian matrix calculation</param>
+            <returns>stop criterion</returns>
+        </member>
+        <member name="M:MKLNET.Solve.NonLinearLeastSquares(MKLNET.SolveFnF,System.Action{System.Single[],System.Single[]},System.Single[],System.Single[],System.Single[],System.Int32,System.Int32,System.Single)">
+            <summary>
+            Nonlinear Least Squares Solver. Fx = F(x). minimizes Norm_2(F(x))
+            </summary>
+            <param name="F">objective function, called in parallel</param>
+            <param name="J">Jacobian function, J_ij = df_i / dx_j as a column major array</param>
+            <param name="x">input values, initial guess to start, solution on exit</param>
+            <param name="Fx">function values, just zero to start, solution on exit</param>
+            <param name="eps">precisions for stop-criteria, defaults to all 1e-9</param>
+            <param name="iter1">maximum number of iterations, defaults of 1000</param>
+            <param name="iter2">maximum number of iterations of calculation of trial-step, default of 100</param>
+            <param name="rs">initial step bound (0.1 - 100.0 recommended), default of 0.0 which MKL defaults as 100.0</param>
+            <returns>stop criterion</returns>
+        </member>
+        <member name="M:MKLNET.Solve.NonLinearLeastSquares(MKLNET.SolveFnF,System.Single[],System.Single[])">
+            <summary>
+            Nonlinear Least Squares Solver. Fx = F(x). minimizes Norm_2(F(x))
+            </summary>
+            <param name="F">objective function, called in parallel</param>
+            <param name="x">input values, initial guess to start, solution on exit</param>
+            <param name="Fx">function values, just zero to start, solution on exit</param>
+            <returns>stop criterion</returns>
+        </member>
+        <member name="M:MKLNET.Solve.NonLinearLeastSquares(MKLNET.SolveFnF,System.Action{System.Single[],System.Single[]},System.Single[],System.Single[])">
+            <summary>
+            Nonlinear Least Squares Solver. Fx = F(x). minimizes Norm_2(F(x))
+            </summary>
+            <param name="F">objective function, called in parallel</param>
+            <param name="J">Jacobian function, J_ij = df_i / dx_j as a column major array</param>
+            <param name="x">input values, initial guess to start, solution on exit</param>
+            <param name="Fx">function values, just zero to start, solution on exit</param>
+            <returns>stop criterion</returns>
+        </member>
+        <member name="M:MKLNET.Solve.NonLinearLeastSquares(System.Action{System.Single[],System.Single[]},System.Single[],System.Single[],System.Single[],System.Single[],System.Single[],System.Int32,System.Int32,System.Single,System.Single)">
+            <summary>
+            Nonlinear Least Squares Solver. Fx = F(x). minimizes Norm_2(F(x))
+            </summary>
+            <param name="F">objective function, not called in parallel</param>
+            <param name="x">input values, initial guess to start, solution on exit</param>
+            <param name="lower">x lower bound</param>
+            <param name="upper">x upper bound</param>
+            <param name="Fx">function values, just zero to start, solution on exit</param>
+            <param name="eps">precisions for stop-criteria, defaults to all 1e-9</param>
+            <param name="iter1">maximum number of iterations, defaults of 1000</param>
+            <param name="iter2">maximum number of iterations of calculation of trial-step, default of 100</param>
+            <param name="rs">initial step bound (0.1 - 100.0 recommended), default of 0.0 which MKL defaults as 100.0</param>
+            <param name="jeps">precision of the Jacobian matrix calculation</param>
+            <returns>stop criterion</returns>
+        </member>
+        <member name="M:MKLNET.Solve.NonLinearLeastSquares(System.Action{System.Single[],System.Single[]},System.Action{System.Single[],System.Single[]},System.Single[],System.Single[],System.Single[],System.Single[],System.Single[],System.Int32,System.Int32,System.Single)">
+            <summary>
+            Nonlinear Least Squares Solver. Fx = F(x). minimizes Norm_2(F(x))
+            </summary>
+            <param name="F">objective function, not called in parallel</param>
+            <param name="J">Jacobian function, J_ij = df_i / dx_j as a column major array</param>
+            <param name="x">input values, initial guess to start, solution on exit</param>
+            <param name="lower">x lower bound</param>
+            <param name="upper">x upper bound</param>
+            <param name="Fx">function values, just zero to start, solution on exit</param>
+            <param name="eps">precisions for stop-criteria, defaults to all 1e-9</param>
+            <param name="iter1">maximum number of iterations, defaults of 1000</param>
+            <param name="iter2">maximum number of iterations of calculation of trial-step, default of 100</param>
+            <param name="rs">initial step bound (0.1 - 100.0 recommended), default of 0.0 which MKL defaults as 100.0</param>
+            <returns>stop criterion</returns>
+        </member>
+        <member name="M:MKLNET.Solve.NonLinearLeastSquares(System.Action{System.Single[],System.Single[]},System.Single[],System.Single[],System.Single[],System.Single[])">
+            <summary>
+            Nonlinear Least Squares Solver. Fx = F(x). minimizes Norm_2(F(x))
+            </summary>
+            <param name="F">objective function, not called in parallel</param>
+            <param name="x">input values, initial guess to start, solution on exit</param>
+            <param name="lower">x lower bound</param>
+            <param name="upper">x upper bound</param>
+            <param name="Fx">function values, just zero to start, solution on exit</param>
+            <returns>stop criterion</returns>
+        </member>
+        <member name="M:MKLNET.Solve.NonLinearLeastSquares(System.Action{System.Single[],System.Single[]},System.Action{System.Single[],System.Single[]},System.Single[],System.Single[],System.Single[],System.Single[])">
+            <summary>
+            Nonlinear Least Squares Solver. Fx = F(x). minimizes Norm_2(F(x))
+            </summary>
+            <param name="F">objective function, not called in parallel</param>
+            <param name="J">Jacobian function, J_ij = df_i / dx_j as a column major array</param>
+            <param name="x">input values, initial guess to start, solution on exit</param>
+            <param name="lower">x lower bound</param>
+            <param name="upper">x upper bound</param>
+            <param name="Fx">function values, just zero to start, solution on exit</param>
+            <returns>stop criterion</returns>
+        </member>
+        <member name="M:MKLNET.Solve.NonLinearLeastSquares(MKLNET.SolveFnF,System.Single[],System.Single[],System.Single[],System.Single[],System.Single[],System.Int32,System.Int32,System.Single,System.Single)">
+            <summary>
+            Nonlinear Least Squares Solver. Fx = F(x). minimizes Norm_2(F(x))
+            </summary>
+            <param name="F">objective function, called in parallel</param>
+            <param name="x">input values, initial guess to start, solution on exit</param>
+            <param name="lower">x lower bound</param>
+            <param name="upper">x upper bound</param>
+            <param name="Fx">function values, just zero to start, solution on exit</param>
+            <param name="eps">precisions for stop-criteria, defaults to all 1e-9</param>
+            <param name="iter1">maximum number of iterations, defaults of 1000</param>
+            <param name="iter2">maximum number of iterations of calculation of trial-step, default of 100</param>
+            <param name="rs">initial step bound (0.1 - 100.0 recommended), default of 0.0 which MKL defaults as 100.0</param>
+            <param name="jeps">precision of the Jacobian matrix calculation</param>
+            <returns>stop criterion</returns>
+        </member>
+        <member name="M:MKLNET.Solve.NonLinearLeastSquares(MKLNET.SolveFnF,System.Action{System.Single[],System.Single[]},System.Single[],System.Single[],System.Single[],System.Single[],System.Single[],System.Int32,System.Int32,System.Single)">
+            <summary>
+            Nonlinear Least Squares Solver. Fx = F(x). minimizes Norm_2(F(x))
+            </summary>
+            <param name="F">objective function, called in parallel</param>
+            <param name="J">Jacobian function, J_ij = df_i / dx_j as a column major array</param>
+            <param name="x">input values, initial guess to start, solution on exit</param>
+            <param name="lower">x lower bound</param>
+            <param name="upper">x upper bound</param>
+            <param name="Fx">function values, just zero to start, solution on exit</param>
+            <param name="eps">precisions for stop-criteria, defaults to all 1e-9</param>
+            <param name="iter1">maximum number of iterations, defaults of 1000</param>
+            <param name="iter2">maximum number of iterations of calculation of trial-step, default of 100</param>
+            <param name="rs">initial step bound (0.1 - 100.0 recommended), default of 0.0 which MKL defaults as 100.0</param>
+            <returns>stop criterion</returns>
+        </member>
+        <member name="M:MKLNET.Solve.NonLinearLeastSquares(MKLNET.SolveFnF,System.Single[],System.Single[],System.Single[],System.Single[])">
+            <summary>
+            Nonlinear Least Squares Solver. Fx = F(x). minimizes Norm_2(F(x))
+            </summary>
+            <param name="F">objective function, called in parallel</param>
+            <param name="x">input values, initial guess to start, solution on exit</param>
+            <param name="lower">x lower bound</param>
+            <param name="upper">x upper bound</param>
+            <param name="Fx">function values, just zero to start, solution on exit</param>
+            <returns>stop criterion</returns>
+        </member>
+        <member name="M:MKLNET.Solve.NonLinearLeastSquares(MKLNET.SolveFnF,System.Action{System.Single[],System.Single[]},System.Single[],System.Single[],System.Single[],System.Single[])">
+            <summary>
+            Nonlinear Least Squares Solver. Fx = F(x). minimizes Norm_2(F(x))
+            </summary>
+            <param name="F">objective function, called in parallel</param>
+            <param name="J">Jacobian function, J_ij = df_i / dx_j as a column major array</param>
+            <param name="x">input values, initial guess to start, solution on exit</param>
+            <param name="lower">x lower bound</param>
+            <param name="upper">x upper bound</param>
+            <param name="Fx">function values, just zero to start, solution on exit</param>
+            <returns>stop criterion</returns>
+        </member>
+        <member name="M:MKLNET.Vsl.Quantiles(System.Int32,System.Int32,System.Double[],System.Double[],System.Double[])">
+            <summary>
+            Calculates an array of quantiles for matrix of data stored column major.
+            </summary>
+            <param name="rows">The number of rows in data.</param>
+            <param name="cols">The number of columns in data.</param>
+            <param name="data">The rows x cols column major data.</param>
+            <param name="quantiles">The quantiles to calculate.</param>
+            <param name="results">The calculated quantiles are set. This needs to be at least of length quantiles.Length x cols.</param>
+        </member>
+        <member name="M:MKLNET.Vsl.QuantilesWeighted(System.Int32,System.Int32,System.Double[],System.Double[],System.Double[],System.Double[])">
+            <summary>
+            Calculates an array of quantiles for matrix of data stored column major.
+            </summary>
+            <param name="rows">The number of rows in data.</param>
+            <param name="cols">The number of columns in data.</param>
+            <param name="data">The rows x cols column major data.</param>
+            <param name="weight"></param>
+            <param name="quantiles">The quantiles to calculate.</param>
+            <param name="results">The calculated quantiles are set. This needs to be at least of length quantiles.Length x cols.</param>
+        </member>
+    </members>
+</doc>
