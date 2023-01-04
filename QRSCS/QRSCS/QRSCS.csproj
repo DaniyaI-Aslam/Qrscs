@@ -202,6 +202,11 @@
     <Compile Include="Common\CaseHistory\RecommendationModel.cs" />
     <Compile Include="Common\FinalResult\FinalResultModel.cs" />
     <Compile Include="Common\SpeechCaseHistory\DevelopmentalHistoryModel.cs" />
+    <Compile Include="Common\SpeechCaseHistory\ExpressiveLangauageModel.cs" />
+    <Compile Include="Common\SpeechCaseHistory\GeneralInformationModel.cs" />
+    <Compile Include="Common\SpeechCaseHistory\ReceptiveLangaugeModel.cs" />
+    <Compile Include="Common\SpeechCaseHistory\SpeechAndLanguageModel.cs" />
+    <Compile Include="Common\SpeechCaseHistory\SpeechCaseHistoryModel.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\EditorController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
@@ -395,6 +400,7 @@
     <Compile Include="Models\SocialEmotionalProcessing_OT2.cs">
       <DependentUpon>QRSCS_DatabaseModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\SpeachCaseHistoryModelDTO.cs" />
     <Compile Include="Models\Speach_and_Langauge.cs">
       <DependentUpon>QRSCS_DatabaseModel.tt</DependentUpon>
     </Compile>
@@ -558,6 +564,8 @@
     <Content Include="Views\Editor\CaseHistory.cshtml" />
     <Content Include="Views\Editor\SpeechTherapyAssessment.cshtml" />
     <Content Include="Views\Editor\Predict_Marks.cshtml" />
+    <Content Include="Views\Editor\SpeechCaseHistory.cshtml" />
+    <Content Include="Views\Editor\AudiologyAssessment.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

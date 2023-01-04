@@ -128,7 +128,11 @@ namespace QRSCS.Controllers
 
             return RedirectToAction("Index","Admin");
         }
-
+        public ActionResult SpeechCaseHistory()
+        {
+            return View();
+        }
+                                  
         public  string CSV_FILE_FOR_STA(int uid)
         {
             SpeechTherapyAssessmentModel User = null;
@@ -180,7 +184,10 @@ namespace QRSCS.Controllers
 
             }
         }
-   
+        public ActionResult AudiologyAssessment()
+        {
+            return View();
+        }
         public ActionResult Predict_Marks()
         {
             return View();

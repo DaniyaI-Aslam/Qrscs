@@ -59,8 +59,8 @@
                             <li>
                                 <a id="hearing_impaired" href="#"><i class='bx bx-plus-medical icon'></i> Hearing Impaired <i class='bx bx-chevron-right icon-right'></i></a>
                                 <ul class="side-dropdown">
-                                    <li><a id="" href="@Url.Action("NewAdmission", "Editor")">Speech Case History</a></li>
-                                    <li><a href="@Url.Action("NewAdmission", "Editor")">Audiology Assesment</a></li>
+                                    <li><a id="" href="@Url.Action("SpeechCaseHistory", "Editor")">Speech Case History</a></li>
+                                    <li><a href="@Url.Action("AudiologyAssessment", "Editor")">Audiology Assesment</a></li>
                                     <li><a id="SpeechTherapyAssessment" href="@Url.Action("SpeechTherapyAssessment", "Editor")">Speech Therapy Asses</a></li>
                                     <li><a href="@Url.Action("SpeechTherapyAssessment", "Editor")">HI Result</a></li>
                                     <li><a href="@Url.Action("SpeechTherapyAssessment", "Editor")">Performance</a></li>
@@ -71,7 +71,7 @@
                             <li>
                                 <a id="Visually_impared" href="#"><i class='bx bx-low-vision  icon'></i> Visually Impaired <i class='bx bx-chevron-right icon-right'></i></a>
                                 <ul class="side-dropdown">
-                                    <li><a href="@Url.Action("NewAdmission", "Editor")">Speech Case History</a></li>
+                                    <li><a href="@Url.Action("SpeechCaseHistory", "Editor")">Speech Case History</a></li>
                                     <li><a href="#">Audiology Assesment</a></li>
                                     <li><a href="@Url.Action("SpeechTherapyAssessment", "Editor")">Speech Therapy Asses</a></li>
                                     <li><a href="@Url.Action("SpeechTherapyAssessment", "Editor")">HI Result</a></li>
@@ -130,8 +130,8 @@
                             <li>
                                 <a id="hearing_impaired" href="#"><i class='bx bx-plus-medical icon'></i> Hearing Impaired <i class='bx bx-chevron-right icon-right'></i></a>
                                 <ul class="side-dropdown">
-                                    <li><a id="" href="@Url.Action("NewAdmission", "Editor")">Speech Case History</a></li>
-                                    <li><a href="@Url.Action("NewAdmission", "Editor")">Audiology Assesment</a></li>
+                                    <li><a id="" href="@Url.Action("SpeechCaseHistory", "Editor")">Speech Case History</a></li>
+                                    <li><a href="@Url.Action("AudiologyAssessment", "Editor")">Audiology Assesment</a></li>
                                     <li><a id="SpeechTherapyAssessment" href="@Url.Action("SpeechTherapyAssessment", "Editor")">Speech Therapy Asses</a></li>
                                     <li><a href="@Url.Action("SpeechTherapyAssessment", "Editor")">HI Result</a></li>
                                     <li><a href="@Url.Action("SpeechTherapyAssessment", "Editor")">Performance</a></li>
@@ -243,10 +243,10 @@
                 }
 
             </script>
-        }
-        else
-        {
-            ((QRSCS.Controllers.LoginController)this.ViewContext.Controller).Logout();
+                        }
+                        else
+                        {
+                            //((QRSCS.Controllers.LoginController)this.ViewContext.Controller).Logout();
             @RenderBody()
 
 
