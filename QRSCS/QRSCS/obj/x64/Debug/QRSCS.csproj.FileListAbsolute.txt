@@ -243,8 +243,8 @@ C:\Users\Zeeboi\Desktop\.net project\Qrscs\QRSCS\QRSCS\bin\System.Web.WebPages.D
 C:\Users\Zeeboi\Desktop\.net project\Qrscs\QRSCS\QRSCS\bin\System.Web.WebPages.Razor.xml
 C:\Users\Zeeboi\Desktop\.net project\Qrscs\QRSCS\QRSCS\bin\Antlr3.Runtime.pdb
 C:\Users\Zeeboi\Desktop\.net project\Qrscs\QRSCS\QRSCS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\Zeeboi\Desktop\.net project\Qrscs\QRSCS\QRSCS\obj\x64\Debug\QRSCS.csprojAssemblyReference.cache
 C:\Users\Zeeboi\Desktop\.net project\Qrscs\QRSCS\QRSCS\obj\x64\Debug\QRSCS.csproj.CoreCompileInputs.cache
 C:\Users\Zeeboi\Desktop\.net project\Qrscs\QRSCS\QRSCS\obj\x64\Debug\QRSCS.csproj.CopyComplete
 C:\Users\Zeeboi\Desktop\.net project\Qrscs\QRSCS\QRSCS\obj\x64\Debug\QRSCS.dll
 C:\Users\Zeeboi\Desktop\.net project\Qrscs\QRSCS\QRSCS\obj\x64\Debug\QRSCS.pdb
+C:\Users\Zeeboi\Desktop\.net project\Qrscs\QRSCS\QRSCS\obj\x64\Debug\QRSCS.csproj.AssemblyReference.cache

@@ -1,0 +1,299 @@
+﻿@model QRSCS.Models.IndividualizedEPlanModelDTO
+ @{
+    ViewBag.Title = "Individualized E-Plan";
+}
+
+<h2>IEP</h2>
+
+<link href="~/Content/IDE/css/idd.css" rel="stylesheet" />
+
+
+<main>
+    <div class="container">
+        <header>Individualized E-Plan</header>
+        
+        @using (Html.BeginForm("Speech Case History", "Editor", FormMethod.Post, new { @id = "formmm", enctype = "multipart/form-data" }))
+        {
+            <div class="form first">
+                <h4>GENERAL INFORMATION</h4>
+                <div class="details personal">
+                    <div class="fields">
+                        <div class="input-field">
+                            <label>GR No.</label>
+                            @Html.TextBoxFor(x => x.iEPlanModel.GR_No, null, new { id = "GR_NO", name = "q27_typeA", @Class = "form-textbox validate[required, Alphabetic, minCharLimit]", maxLength = "30", placeholder = "GR No.", type = "text", size = "10", onchange = "GetSTDInfo(document.getElementById('GR_NO').value)" })
+                            @Html.ValidationMessageFor(x => x.iEPlanModel.GR_No, null, new { style = "color:red" })
+                        </div>
+                    </div>
+                    <div class="fields">
+                        <div class="input-field">
+                            <label>Name</label>
+                            <input type="text" placeholder="Student Name" style="border-radius: 5px; " />
+                        </div>
+                        <div class="input-field">
+
+                            <label>Gender</label>
+                            @Html.DropDownListFor(x => x.presentLevel.Gender, new List<SelectListItem>
+                         { new SelectListItem() { Text = "Please Select" },
+                           new SelectListItem() { Text = "Male" },
+                           new SelectListItem() { Text = "Female" }
+                         }, new { @required = "required", id = "gen" })
+
+
+
+
+                        </div>
+                        <div class="input-field">
+                            <label>DOB</label>
+                            <input type="text" placeholder="Date of Birth" style="border-radius: 5px; " />
+                        </div>
+                        <div class="input-field">
+                            <label>Disability</label>
+                            <input type="text" placeholder="Disability of Student" style="border-radius: 5px; " />
+                        </div>
+
+
+                        <div class="input-field">
+                            <div onclick="forwardbtn()" class="backBtn">
+                                <span class="btnText">Next</span>
+                                <i style="transform:none" class="uil uil-navigator"></i>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+                </div>
+            </div>
+      
+             <div class="form second">
+                 <h4>MEETING INFORMATION</h4>
+                 <div class="details personal">
+                     <div class="fields">
+                         <div class="input-field">
+                             <label> Date of Assessment</label>
+                             @Html.EditorFor(x => x.iEPlanModel.Date_Of_Assessment, new { htmlAttributes = new { @id = "d_ex", @class = "form-textbox validate[required]", @type = "date" } })
+                             @Html.ValidationMessageFor(x => x.iEPlanModel.Date_Of_Assessment, null, new { style = "color:red" })
+                         </div>
+
+                     </div>
+                     <div class="col-lg-6 mb-4">
+                         <div class="card shadow p-3 mb-5 bg-white rounded">
+
+
+                             <div class="card-body">
+                                 <h5 class="card-title"></h5>
+                                 <center><h5> Select one or multiple choices</h5></center>
+
+
+                                 <table class="table table-borderless" width="100%">
+                                     <tr>
+                                         <th width="5%"></th>
+                                         <th width="45%" style="text-align:left;">Meeting</th>
+                                         <th width="40%" style="text-align:left;">Date</th>
+                                     </tr>
+                                     <tr>
+                                         <td><input type="checkbox" /></td>
+                                         <td><label>Initial IEP</label></td>
+                                         <td>@Html.TextBoxFor(x => x.meetingInformation.Initial_IEP, null, new { type = "date" })</td>
+                                     </tr>
+                                     <tr>
+                                         <td><input type="checkbox" /></td>
+                                         <td><label>Annual Review</label></td>
+                                         <td>@Html.TextBoxFor(x => x.meetingInformation.Annual_Review, null, new { id = "meetingInformation_Annual_Review", type = "date" })</td>
+                                     </tr>
+                                     <tr>
+                                         <td><input type="checkbox" /></td>
+                                         <td><label>Review Other Than Annual Review</label></td>
+                                         <td>@Html.TextBoxFor(x => x.meetingInformation.Review_Other_Than_Annaul_Review, null, new { type = "date" })</td>
+                                     </tr>
+                                     <tr>
+                                         <td><input type="checkbox" /></td>
+                                         <td><label>Ammendment</label></td>
+                                         <td>@Html.TextBoxFor(x => x.meetingInformation.Ammendment, null, new { type = "date" })</td>
+                                     </tr>
+
+                                 </table>
+                             </div>
+                         </div>
+                     </div>
+                     <div class="input-field">
+                         <label> Date of Assessment</label>
+                         @Html.TextBoxFor(x => x.meetingInformation.Communicating_Language, null, new { name = "q28_motherName", @Class = "form-textbox validate[Alphabetic, minCharLimit]", maxLength = "30", placeholder = "", type = "text", size = "10" })
+                         @Html.ValidationMessageFor(x => x.meetingInformation.Communicating_Language, null, new { style = "color:red;" })
+                     </div>
+
+                     <div class="buttons">
+
+                         <div onclick="backwardbtn()" class="backBtn">
+                             <i class="uil uil-navigator"></i>
+                             <span class="btnText">Back</span>
+
+                         </div>
+
+
+                         <div onclick="nextforwardbtn()" class="backBtn" style="margin-left:1.5rem;">
+                             <span class="btnText">Next</span>
+                             <i style="transform:none" class="uil uil-navigator"></i>
+                         </div>
+                         </div>
+                     </div>
+                 </div>
+         
+
+             <div class="form third">
+                 <h4>PRESENT LEVEL OF PERFORMANCE</h4>
+                 <div class="details personal">
+                     <div class="fields">
+                         <div class="input-field">
+                             <label>Physical Development</label>
+                             @Html.TextBoxFor(x => x.presentLevel.Physical_Development, null, new { id = "presentLevel_Physical_Development", name = "q27_typeA", @Class = "form-textbox validate[required, Alphabetic, minCharLimit]", maxLength = "30", placeholder = "", type = "text", size = "10" })
+                             @Html.ValidationMessageFor(x => x.presentLevel.Physical_Development, null, new { style = "color:red" })
+                         </div>
+
+                         <div class="input-field">
+                             <label>Communication</label>
+                             @Html.TextBoxFor(x => x.presentLevel.Communication, null, new { id = "presentLevel_Communication", name = "q27_typeA", @Class = "form-textbox validate[required, Alphabetic, minCharLimit]", maxLength = "30", placeholder = "", type = "text", size = "10" })
+                             @Html.ValidationMessageFor(x => x.presentLevel.Communication, null, new { style = "color:red" })
+                         </div>
+
+                         <div class="input-field">
+                             <label>Self-help Skills</label>
+                             @Html.TextBoxFor(x => x.presentLevel.Self_Help_Skills, null, new { id = "presentLevel_Self_Help_Skills", name = "q27_typeA", @Class = "form-textbox validate[required, Alphabetic, minCharLimit]", maxLength = "30", placeholder = "", type = "text", size = "10" })
+                             @Html.ValidationMessageFor(x => x.presentLevel.Self_Help_Skills, null, new { style = "color:red" })
+                         </div>
+                         <div class="input-field">
+                             <label>Cognition</label>
+                             @Html.TextBoxFor(x => x.presentLevel.Cognition, null, new { id = "presentLevel_Cognition", name = "q27_typeA", @Class = "form-textbox validate[required, Alphabetic, minCharLimit]", maxLength = "30", placeholder = "", type = "text", size = "10" })
+                             @Html.ValidationMessageFor(x => x.presentLevel.Cognition, null, new { style = "color:red" })
+                         </div>
+                         <div class="input-field">
+                             <label>Socialization</label>
+                             @Html.TextBoxFor(x => x.presentLevel.Socialization, null, new { id = "presentLevel_Socialization", name = "q27_typeA", @Class = "form-textbox validate[required, Alphabetic, minCharLimit]", maxLength = "30", placeholder = "", type = "text", size = "10" })
+                             @Html.ValidationMessageFor(x => x.presentLevel.Socialization, null, new { style = "color:red" })
+                         </div>
+                         <div class="input-field">
+                             <label> Functional Academic</label>
+                             @Html.TextBoxFor(x => x.presentLevel.Functional_Academic, null, new { id = "presentLevel_Functional_Academic", name = "q27_typeA", @Class = "form-textbox validate[required, Alphabetic, minCharLimit]", maxLength = "30", placeholder = "", type = "text", size = "10" })
+                             @Html.ValidationMessageFor(x => x.presentLevel.Functional_Academic, null, new { style = "color:red" })
+                         </div>
+                         <div class="input-field">
+                             <label>Academic Performance</label>
+                             @Html.TextBoxFor(x => x.presentLevel.Academic_Performance, null, new { id = "presentLevel_Academic_Performance", name = "q27_typeA", @Class = "form-textbox validate[required, Alphabetic, minCharLimit]", maxLength = "30", placeholder = "", type = "text", size = "10" })
+                             @Html.ValidationMessageFor(x => x.presentLevel.Academic_Performance, null, new { style = "color:red" })
+                         </div>
+                         <div class="input-field">
+                             <label>  Pre-vocational / Vocational Skills </label>
+                             @Html.TextBoxFor(x => x.presentLevel.PreVocational_Skills, null, new { id = "presentLevel_PreVocational_Skills", name = "q27_typeA", @Class = "form-textbox validate[required, Alphabetic, minCharLimit]", maxLength = "30", placeholder = "", type = "text", size = "10" })
+                             @Html.ValidationMessageFor(x => x.presentLevel.Self_Help_Skills, null, new { style = "color:red" })
+                         </div>
+                         <div class="input-field">
+                             <label>  General / Others </label>
+                             @Html.TextBoxFor(x => x.presentLevel.Others, null, new { id = "presentLevel_Others", name = "q27_typeA", @Class = "form-textbox validate[required, Alphabetic, minCharLimit]", maxLength = "30", placeholder = "", type = "text", size = "10" })
+                             @Html.ValidationMessageFor(x => x.presentLevel.Others, null, new { style = "color:red" })
+                         </div>
+
+
+                     </div>
+                     <div class="buttons">
+                         <div onclick="nextbackwardbtn()" class="backBtn">
+                             <i class="uil uil-navigator"></i>
+                             <span class="btnText">Back</span>
+
+
+                         </div>
+                         <div onclick="nextforwardbtn()" class="backBtn" style="margin-left:1.5rem;">
+                             <span class="btnText">Next</span>
+                             <i style="transform:none" class="uil uil-navigator"></i>
+                         </div>
+                     </div>
+
+
+                     </div>
+
+
+                 </div>
+             <div class="form forth">
+                 <div class="col-lg-6 mb-4">
+                     <br />
+                     <div class="card shadow p-3 mb-5 bg-white rounded">
+                         <div class="card-body ">
+                             <h3 class="card-title">SPECIAL INSTRUCTIONAL INFORMATION</h3>
+                             <h6>Items checked 'YES' must be addressed in this IEP: </h6>
+                             <table class="table table-borderless" width="100%">
+                                 <tr>
+                                     <th width="80%"></th>
+                                     <th width="10%" style="text-align:left;">Yes</th>
+                                     <th width="10%" style="text-align:left;">No</th>
+                                 </tr>
+                                 <tr>
+                                     <td>Does the student exhibit behaviors which impede his/her learning of others?</td>
+                                     <td>@Html.RadioButtonFor(x => x.specialInstructional.Question_4, "Yes", new { @class = "form-radio validate[required]", type = "radio", id = "input_3_6", name = "q3_typeA", value = "Labor", required = "" })</td>
+                                     <td>
+                                         @Html.RadioButtonFor(x => x.specialInstructional.Question_4, "No", new { @class = "form-radio validate[required]", type = "radio", id = "input_3_7", name = "q3_typeA", value = "Normal", required = "" })
+                                     </td>
+                                 </tr>
+                                 <tr>
+                                     <td>Does the student have limited English proficiency?</td>
+                                     <td>
+                                         @Html.RadioButtonFor(x => x.specialInstructional.Question_2, "Yes", new { @class = "form-radio validate[required]", type = "radio", id = "input_3_2", name = "q3_typeA", value = "Labor", required = "" })
+                                     </td>
+                                     <td>
+                                         @Html.RadioButtonFor(x => x.specialInstructional.Question_2, "No", new { @class = "form-radio validate[required]", type = "radio", id = "input_3_3", name = "q3_typeA", value = "Normal", required = "" })
+                                     </td>
+                                 </tr>
+                                 <tr>
+                                     <td>Does the student require instruction in Braille and the use of Braille?</td>
+                                     <td>
+                                         @Html.RadioButtonFor(x => x.specialInstructional.Question_3, "Yes", new { @class = "form-radio validate[required]", type = "radio", id = "input_3_4", name = "q3_typeA", value = "Labor", required = "" })
+                                     </td>
+                                     <td>
+                                         @Html.RadioButtonFor(x => x.specialInstructional.Question_3, "No", new { @class = "form-radio validate[required]", type = "radio", id = "input_3_5", name = "q3_typeA", value = "Normal", required = "" })
+                                     </td>
+                                 </tr>
+                                 <tr>
+                                     <td>Does the student have communication needs (deaf or hearing impaired only)? </td>
+                                     <td>
+                                         @Html.RadioButtonFor(x => x.specialInstructional.Question_4, "Yes", new { @class = "form-radio validate[required]", type = "radio", id = "input_3_6", name = "q3_typeA", value = "Labor", required = "" })
+                                     </td>
+                                     <td>
+                                         @Html.RadioButtonFor(x => x.specialInstructional.Question_4, "No", new { @class = "form-radio validate[required]", type = "radio", id = "input_3_7", name = "q3_typeA", value = "Normal", required = "" })
+                                     </td>
+                                 </tr>
+                                 <tr>
+                                     <td>Does the student need assistive technology devices and/or services?</td>
+                                     <td>
+                                         @Html.RadioButtonFor(x => x.specialInstructional.Question_5, "Yes", new { @class = "form-radio validate[required]", type = "radio", id = "input_3_8", name = "q3_typeA", value = "Labor", required = "" })
+                                     </td>
+                                     <td>
+                                         @Html.RadioButtonFor(x => x.specialInstructional.Question_5, "No", new { @class = "form-radio validate[required]", type = "radio", id = "input_3_9", name = "q3_typeA", value = "Normal", required = "" })
+                                     </td>
+                                 </tr>
+                                 <tr>
+                                     <td>Is the student working toward alternate achievement standards assessed via alternate assessments?</td>
+                                     <td>
+                                         @Html.RadioButtonFor(x => x.specialInstructional.Question_6, "Yes", new { @class = "form-radio validate[required]", type = "radio", id = "input_3_10", name = "q3_typeA", value = "Labor", required = "" })
+                                     </td>
+                                     <td>
+                                         @Html.RadioButtonFor(x => x.specialInstructional.Question_6, "No", new { @class = "form-radio validate[required]", type = "radio", id = "input_3_11", name = "q3_typeA", value = "Normal", required = "" })
+                                     </td>
+                                 </tr>
+                             </table>
+                         </div>
+                                                  <div onclick="backwardbtn()" class="backBtn">
+                             <i class="uil uil-navigator"></i>
+                             <span class="btnText">Back</span>
+
+                         </div>
+                     </div>
+                 </div>
+             </div>
+                         }
+                     </div>
+</main>
+
+<script src="~/Content/NewAdmissionAssets/js/newadd.js"></script>

@@ -58,6 +58,11 @@
                 pointer-events: none;
                 transform: translateX(200%);
             }
+            .container form .form.forth {
+                opacity: 0;
+                pointer-events: none;
+                transform: translateX(300%);
+            }
 
 
 form.secActive .form.second {
@@ -77,17 +82,29 @@ form.thiActive .form.third {
     pointer-events: auto;
     transform: translateX(0);
 }
+form.thiActive .form.forth {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(0);
+}
 
-form.thiActive .form.second {
+
+form.thiActive .form.third {
     opacity: 1;
     pointer-events: auto;
     transform: translateX(-100%);
 }
 
+form.thiActive .form.second {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(-200%);
+}
+
 form.thiActive .form.first {
     opacity: 0;
     pointer-events: none;
-    transform: translateX(-200%);
+    transform: translateX(-300%);
 }
 
 .container form .title {

@@ -201,6 +201,13 @@
     <Compile Include="Common\CaseHistory\PsychoSocialFactorModel.cs" />
     <Compile Include="Common\CaseHistory\RecommendationModel.cs" />
     <Compile Include="Common\FinalResult\FinalResultModel.cs" />
+    <Compile Include="Common\IEP\DevelopmentTeamIEPModel.cs" />
+    <Compile Include="Common\IEP\IEPlanModel.cs" />
+    <Compile Include="Common\IEP\IEP_Page3Model.cs" />
+    <Compile Include="Common\IEP\MeetingInformationIEPModel.cs" />
+    <Compile Include="Common\IEP\PresentLevelIEPModel.cs" />
+    <Compile Include="Common\IEP\SpecialInstructionalIEPModel.cs" />
+    <Compile Include="Common\IEP\SupplementaryAidsIEPModel.cs" />
     <Compile Include="Common\SpeechCaseHistory\DevelopmentalHistoryModel.cs" />
     <Compile Include="Common\SpeechCaseHistory\ExpressiveLangauageModel.cs" />
     <Compile Include="Common\SpeechCaseHistory\GeneralInformationModel.cs" />
@@ -209,6 +216,7 @@
     <Compile Include="Common\SpeechCaseHistory\SpeechCaseHistoryModel.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\EditorController.cs" />
+    <Compile Include="Controllers\IDDController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\ResultController.cs" />
     <Compile Include="Controllers\TeacherController.cs" />
@@ -299,6 +307,7 @@
     <Compile Include="Models\IEP_Page3.cs">
       <DependentUpon>QRSCS_DatabaseModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\IndividualizedEPlanModelDTO.cs" />
     <Compile Include="Models\IntelligenceQuotient.cs">
       <DependentUpon>QRSCS_DatabaseModel.tt</DependentUpon>
     </Compile>
@@ -465,6 +474,7 @@
     <Compile Include="QrscsRolesProvider.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Adminassets\css\resultstyle.css" />
     <Content Include="Content\Adminassets\js\main_charts.js" />
     <Content Include="Content\Adminassets\js\predict_marks.js" />
     <Content Include="Content\Adminassets\js\ViewAllStudents.js" />
@@ -480,6 +490,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\IDE\css\idd.css" />
     <Content Include="Content\loginassets\css\login_design.css" />
     <Content Include="Content\loginassets\css\notify_alert.css" />
     <Content Include="Content\loginassets\img\aa.jpg" />
@@ -566,6 +577,8 @@
     <Content Include="Views\Editor\Predict_Marks.cshtml" />
     <Content Include="Views\Editor\SpeechCaseHistory.cshtml" />
     <Content Include="Views\Editor\AudiologyAssessment.cshtml" />
+    <Content Include="Views\IDD\IEP.cshtml" />
+    <Content Include="Views\IDD\ViewAllIEP.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

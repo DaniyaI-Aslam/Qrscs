@@ -54,15 +54,15 @@
 
                         </div>
                         @*<div class="input-field">
-            <label>Class of Admission</label>
-            @Html.DropDownListFor(x => x.Class, new List<SelectListItem>
-         { new SelectListItem() { Text = "Please Select" },
-           new SelectListItem() { Text = "Yes" },
-           new SelectListItem() { Text = "No" },
+                            <label>Class of Admission</label>
+                            @Html.DropDownListFor(x => x.Class, new List<SelectListItem>
+                         { new SelectListItem() { Text = "Please Select" },
+                           new SelectListItem() { Text = "Yes" },
+                           new SelectListItem() { Text = "No" },
 
 
-         }, new { @required = "required", id = "gen" })
-        </div>*@
+                         }, new { @required = "required", id = "gen" })
+                        </div>*@
                         <div class="input-field">
                             <label>Who is the child's Primary Caregiver? </label>
                             @Html.TextBoxFor(x => x.GeneralInformation.Child_Primary_Caregiver, null, new { @Class = "form-textbox validate[required, Alphabetic, minCharLimit]", maxLength = "20", dataminlength = "", placeholder = "Type here", type = "text", id = "first_56", name = "q56_name[first]", size = "10", datacomponent = "first", arialabelledby = "label_56 sublabel_56_first" })
@@ -199,19 +199,19 @@
                     </div>
                 </div>
                 <div class="buttons">
-                  
+
                     <div onclick="backwardbtn()" class="backBtn">
                         <i class="uil uil-navigator"></i>
                         <span class="btnText">Back</span>
 
                     </div>
-                    
-                    
-                        <div onclick="nextforwardbtn()" class="backBtn" style="margin-left:1.5rem;">
-                            <span class="btnText">Next</span>
-                            <i style="transform:none" class="uil uil-navigator"></i>
-                        </div>
-                 
+
+
+                    <div onclick="nextforwardbtn()" class="backBtn" style="margin-left:1.5rem;">
+                        <span class="btnText">Next</span>
+                        <i style="transform:none" class="uil uil-navigator"></i>
+                    </div>
+
 
 
                 </div>
@@ -270,7 +270,8 @@
 
                 </div>
 
-            </div> 
+            </div>
+
                 }
             </div>
 </main>
